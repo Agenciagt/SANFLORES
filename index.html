@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnes San Flores | Calidad que se siente, confianza que nos elige</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Vector Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: {
+                            50: '#fdf2f4',
+                            100: '#fbe6e9',
+                            600: '#a31d36',
+                            700: '#871026',
+                            800: '#6b0014',
+                            900: '#48000d',
+                            950: '#2b0007'
+                        },
+                        gold: {
+                            100: '#fef7e0',
+                            400: '#e5c158',
+                            500: '#d4af37',
+                            600: '#c59b27',
+                            700: '#9e7a17'
+                        },
+                        stone: {
+                            50: '#faf7f2',
+                            100: '#f3ede2',
+                            200: '#e7dccb',
+                            800: '#292524',
+                            900: '#1c1917',
+                            950: '#0c0a09'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* 2026 Light Luxury Styling */
+        body {
+            background-color: #faf7f2;
+            color: #1c1917;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #871026 0%, #6b0014 40%, #c59b27 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .luxury-card {
+            background: #ffffff;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 30px -10px rgba(107, 0, 20, 0.05);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .luxury-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(197, 155, 39, 0.5);
+            box-shadow: 0 20px 40px -12px rgba(107, 0, 20, 0.12);
+        }
+
+        /* Scroll reveal class animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        img {
+            object-fit: cover;
+        }
+
+        /* Chatbot Styles */
+        #chatbot-container {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-origin: bottom right;
+        }
+        
+        .chat-message-bubble {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .typing-indicator span {
+            animation: blink 1.4s infinite both;
+            height: 6px;
+            width: 6px;
+            background: #a31d36;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 1px;
+        }
+
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes blink {
+            0% { opacity: 0.2; }
+            20% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+
+        /* Custom Scrollbar for Chat */
+        #chat-messages::-webkit-scrollbar { width: 6px; }
+        #chat-messages::-webkit-scrollbar-track { background: #f3ede2; border-radius: 4px; }
+        #chat-messages::-webkit-scrollbar-thumb { background: #e7dccb; border-radius: 4px; }
+        #chat-messages::-webkit-scrollbar-thumb:hover { background: #d4af37; }
+
+        #faq-list::-webkit-scrollbar { height: 4px; }
+        #faq-list::-webkit-scrollbar-track { background: transparent; }
+        #faq-list::-webkit-scrollbar-thumb { background: #e7dccb; border-radius: 4px; }
+    </style>
+</head>
+<body class="selection:bg-burgundy-800 selection:text-white">
+
+    <div class="bg-burgundy-900 text-amber-100 text-xs py-2.5 px-4 relative z-50 border-b border-gold-600/30">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center space-x-2">
+                    <i class="fa-solid fa-location-dot text-gold-400"></i>
+                    <span class="font-medium tracking-wide">3ra. Avenida 6-45, Zona 4, Villa Nueva, Guatemala</span>
+                </span>
+                <span class="hidden lg:flex items-center space-x-2">
+                    <i class="fa-solid fa-clock text-gold-400"></i>
+                    <span>Atención de Lunes a Domingo</span>
+                </span>
+            </div>
+            <div class="flex items-center space-x-5 font-semibold">
+                <a href="https://wa.me/50235856086?text=Hola%20Carnes%20San%20Flores,%20me%20gustaría%20recibir%20atención" target="_blank" class="hover:text-gold-400 transition flex items-center space-x-1.5">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+                    <span>+502 3585-6086</span>
+                </a>
+                <span class="text-burgundy-700">|</span>
+                <a href="mailto:carnesanflores@gmail.com" class="hover:text-gold-400 transition flex items-center space-x-1.5">
+                    <i class="fa-regular fa-envelope text-gold-400"></i>
+                    <span>carnesanflores@gmail.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#inicio" class="flex items-center space-x-3 group">
+                <div class="w-14 h-14 rounded-full border-2 border-gold-500/40 p-0.5 bg-white shadow-md group-hover:border-burgundy-700 transition duration-300">
+                    <img src="SAN1.png" alt="Logo Carnes San Flores" class="w-full h-full object-contain rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/120x120/6b0014/ffffff?text=SAN1';">
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-tight text-burgundy-900 block leading-tight">CARNES SAN FLORES</span>
+                    <span class="text-[11px] tracking-widest text-gold-700 font-bold uppercase block">Carnes Frescas & Cortes Premium</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-stone-700">
+                <a href="#inicio" class="hover:text-burgundy-800 transition py-1 border-b-2 border-transparent hover:border-burgundy-800">Inicio</a>
+                <a href="#historia" class="hover:text-burgundy-800 transition py-1 border-b-2 border-transparent hover:border-burgundy-800">Nuestra Historia</a>
+                <a href="#nosotros" class="hover:text-burgundy-800 transition py-1 border-b-2 border-transparent hover:border-burgundy-800">¿Quiénes Somos?</a>
+                <a href="#valores" class="hover:text-burgundy-800 transition py-1 border-b-2 border-transparent hover:border-burgundy-800">Objetivos & Valores</a>
+                <a href="#equipo" class="hover:text-burgundy-800 transition py-1 border-b-2 border-transparent hover:border-burgundy-800">Equipo</a>
+                <a href="#contacto" class="hover:text-burgundy-800 transition py-1 border-b-2 border-transparent hover:border-burgundy-800">Ubicación</a>
+            </nav>
+
+            <!-- CTA Online Store Button -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="tienda.html" class="px-6 py-3 rounded-xl bg-gradient-to-r from-burgundy-800 to-burgundy-900 hover:from-burgundy-700 hover:to-burgundy-800 text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-burgundy-900/20 hover:shadow-lg transition transform hover:-translate-y-0.5 flex items-center space-x-2">
+                    <i class="fa-solid fa-store text-gold-400"></i>
+                    <span>Ir a la Tienda</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl text-stone-700 hover:bg-stone-100 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-stone-200 px-6 pt-4 pb-6 space-y-4 shadow-xl">
+            <a href="#inicio" class="block py-2 text-stone-800 font-semibold hover:text-burgundy-800 border-b border-stone-100">Inicio</a>
+            <a href="#historia" class="block py-2 text-stone-800 font-semibold hover:text-burgundy-800 border-b border-stone-100">Nuestra Historia</a>
+            <a href="#nosotros" class="block py-2 text-stone-800 font-semibold hover:text-burgundy-800 border-b border-stone-100">¿Quiénes Somos?</a>
+            <a href="#valores" class="block py-2 text-stone-800 font-semibold hover:text-burgundy-800 border-b border-stone-100">Objetivos & Valores</a>
+            <a href="#equipo" class="block py-2 text-stone-800 font-semibold hover:text-burgundy-800 border-b border-stone-100">Equipo</a>
+            <a href="#contacto" class="block py-2 text-stone-800 font-semibold hover:text-burgundy-800">Ubicación & Contacto</a>
+            <a href="tienda.html" class="block w-full text-center py-3.5 mt-2 rounded-xl bg-burgundy-800 text-white font-bold text-sm tracking-wider uppercase">
+                <i class="fa-solid fa-store mr-2 text-gold-400"></i> Ir a la Tienda Online
+            </a>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-stone-100 via-stone-50 to-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Hero Text Content -->
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left reveal">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-stone-200/80 border border-gold-600/30 text-xs font-bold text-burgundy-900 tracking-wide">
+                    <i class="fa-solid fa-award text-gold-600"></i>
+                    <span>Tradición, Higiene & Excelencia en Carnes Frescas</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold text-stone-900 leading-tight">
+                    Calidad que se siente, <br>
+                    <span class="gold-text-gradient">confianza que nos elige.</span>
+                </h1>
+
+                <p class="text-base sm:text-lg text-stone-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                    Somos una empresa guatemalteca dedicada a la comercialización y distribución de carne fresca de primera calidad. Mantenemos una cadena de frío estricta y un servicio personalizado en Villa Nueva.
+                </p>
+
+                <!-- Hero CTAs -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="tienda.html" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-burgundy-800 hover:bg-burgundy-900 text-white font-bold text-sm tracking-wider uppercase shadow-xl shadow-burgundy-900/20 transition transform hover:-translate-y-0.5 flex items-center justify-center space-x-3">
+                        <i class="fa-solid fa-cart-shopping text-gold-400"></i>
+                        <span>Explorar Tienda</span>
+                    </a>
+                    <a href="https://wa.me/50235856086?text=Hola,%20quisiera%20solicitar%20información%20sobre%20sus%20carnes%20frescas" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white border border-stone-300 text-stone-800 font-bold text-sm hover:bg-stone-100 hover:border-emerald-600 transition flex items-center justify-center space-x-3 shadow-sm group">
+                        <i class="fa-brands fa-whatsapp text-emerald-600 text-xl group-hover:scale-110 transition"></i>
+                        <span>Pedido por WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Feature Highlights -->
+                <div class="grid grid-cols-3 gap-6 pt-8 border-t border-stone-200">
+                    <div>
+                        <span class="block font-serif text-3xl font-extrabold text-burgundy-900">100%</span>
+                        <span class="text-xs text-stone-600 font-semibold">Carne Fresca Diaria</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-3xl font-extrabold text-burgundy-900">Sub-Cero</span>
+                        <span class="text-xs text-stone-600 font-semibold">Cadena de Frío Rigurosa</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-3xl font-extrabold text-burgundy-900">Local</span>
+                        <span class="text-xs text-stone-600 font-semibold">Orgullo Guatemalteco</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image Banner SAN1 -->
+            <div class="lg:col-span-5 relative reveal">
+                <div class="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl luxury-card p-2 bg-white">
+                    <img src="SAN1.png" alt="Logotipo e Identidad Carnes San Flores" class="w-full h-[450px] object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x700/6b0014/ffffff?text=SAN1.png';">
+                    <div class="absolute bottom-6 left-6 right-6 bg-stone-900/90 backdrop-blur-md p-4 rounded-2xl text-white border border-gold-500/30">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-burgundy-700 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-shield-halved text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold tracking-wider uppercase text-gold-400">Garantía Inviolable</h4>
+                                <p class="text-xs text-stone-200">Inspección de calidad y frescura en cada entrega.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="historia" class="py-24 bg-white relative border-y border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Story Image SAN2 -->
+                <div class="lg:col-span-5 reveal">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-stone-200 group">
+                        <img src="SAN2.png" alt="Orígenes de Carnes San Flores" class="w-full h-[480px] object-cover transform group-hover:scale-105 transition duration-700" onerror="this.onerror=null; this.src='https://placehold.co/600x700/f3ede2/6b0014?text=SAN2.png';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <p class="font-serif italic text-base text-gold-300">
+                                "Uniendo visión estratégica y pasión por el servicio para transformar la experiencia del cliente."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Text Content (Updated with new professional background) -->
+                <div class="lg:col-span-7 space-y-6 reveal">
+                    <div class="inline-flex items-center space-x-2 text-xs font-bold text-burgundy-800 tracking-widest uppercase bg-burgundy-50 px-3 py-1 rounded-md border border-burgundy-100">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Desarrollo Comercial</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 leading-snug">
+                        Nuestra Historia: El proyecto de profesionales visionarios
+                    </h2>
+
+                    <div class="space-y-4 text-stone-600 text-base font-normal leading-relaxed">
+                        <p>
+                            La historia de <strong class="text-stone-900 font-semibold">Carnes San Flores</strong> nace de la visión conjunta de un grupo de profesionales altamente experimentados en el desarrollo de negocios. <span class="text-burgundy-800 font-semibold">Daniel Flores</span>, como principal inversionista del proyecto, identificó la gran oportunidad de establecer un centro de distribución cárnica de alto nivel en la región.
+                        </p>
+                        <p>
+                            A esta sólida iniciativa se sumó <span class="text-burgundy-800 font-semibold">Cristian Conoz</span>, un apasionado de los bienes raíces con experiencia gestionando múltiples terrenos ideales para la ubicación estratégica de la empresa, junto a su esposa <span class="text-burgundy-800 font-semibold">Jessi</span>. Juntos, decidieron combinar sus respectivos capitales y conocimientos comerciales para estructurar un modelo comercial eficiente, formal y sumamente confiable.
+                        </p>
+                        <p>
+                            Integrando su experiencia en inversión, infraestructura y logística, lograron establecer instalaciones de vanguardia en Villa Nueva, logrando hoy en día distribuir cortes de la más alta calidad y satisfacer a los clientes más exigentes.
+                        </p>
+                    </div>
+
+                    <div class="pt-4 grid sm:grid-cols-2 gap-4 border-t border-stone-200">
+                        <div class="p-4 rounded-xl bg-stone-50 border border-stone-200 flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-burgundy-800 text-gold-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold text-stone-900">Inversionistas Expertos</span>
+                                <span class="text-[11px] text-stone-500">Experiencia Comercial Sólida</span>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-stone-50 border border-stone-200 flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-burgundy-800 text-gold-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-house-flag"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold text-stone-900">Origen Local</span>
+                                <span class="text-[11px] text-stone-500">Villa Nueva, Guatemala</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="py-24 bg-stone-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-xs font-bold text-gold-700 tracking-widest uppercase block mb-2">Conoce Nuestra Empresa</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900">¿Quiénes Somos?</h2>
+                <p class="mt-4 text-stone-600 text-base leading-relaxed">
+                    Carnes San Flores es una empresa guatemalteca especializada en la comercialización y distribución de carne fresca de primera calidad. Nos respaldan la transparencia, la higiene y la confianza de nuestras familias clientes.
+                </p>
+            </div>
+
+            <!-- Pillars Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Pillar 1 -->
+                <div class="luxury-card p-8 rounded-2xl reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-burgundy-50 border border-burgundy-100 flex items-center justify-center text-burgundy-800 text-2xl mb-6">
+                        <i class="fa-solid fa-drumstick-bite"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-3">Especialistas en Carnes Frescas</h3>
+                    <p class="text-sm text-stone-600 font-normal leading-relaxed">
+                        Seleccionamos minuciosamente cada lote cárnico para asegurar ternura, sabor y la mejor experiencia gastronómica.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="luxury-card p-8 rounded-2xl reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-burgundy-50 border border-burgundy-100 flex items-center justify-center text-burgundy-800 text-2xl mb-6">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-3">Frescura Garantizada</h3>
+                    <p class="text-sm text-stone-600 font-normal leading-relaxed">
+                        Contamos con una cadena de frío estricta y supervisión constante en cada etapa de la distribución.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="luxury-card p-8 rounded-2xl reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-burgundy-50 border border-burgundy-100 flex items-center justify-center text-burgundy-800 text-2xl mb-6">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-3">Cercanía y Confianza</h3>
+                    <p class="text-sm text-stone-600 font-normal leading-relaxed">
+                        Ofrecemos una atención honesta, transparente y accesible para todos los vecinos de Villa Nueva.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mission & Vision Cards -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Mission -->
+                <div class="luxury-card p-8 rounded-2xl bg-white border-l-4 border-l-burgundy-800 reveal">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-burgundy-800 text-gold-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gold-700 font-bold uppercase tracking-wider">Nuestra Misión</span>
+                            <h3 class="text-2xl font-serif font-bold text-stone-900">Misión Corporativa</h3>
+                        </div>
+                    </div>
+                    <h4 class="text-base font-bold text-burgundy-900 mb-2">Ofrecer Carne Fresca y de Máxima Calidad</h4>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        Nos dedicamos a garantizar un servicio excepcional, precios competitivos y la total satisfacción de nuestros clientes en cada visita. Cada producto entregado lleva nuestro sello de responsabilidad.
+                    </p>
+                </div>
+
+                <!-- Vision -->
+                <div class="luxury-card p-8 rounded-2xl bg-white border-l-4 border-l-gold-600 reveal">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-stone-900 text-gold-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gold-700 font-bold uppercase tracking-wider">Nuestro Futuro</span>
+                            <h3 class="text-2xl font-serif font-bold text-stone-900">Visión Corporativa</h3>
+                        </div>
+                    </div>
+                    <h4 class="text-base font-bold text-burgundy-900 mb-2">Ser la Empresa Cárnica Líder en la Región</h4>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        Aspiramos a ser la opción de mayor preferencia en Villa Nueva y sus alrededores, reconocidos por la frescura de nuestras carnes, la higiene rigurosa y la excelencia en el servicio al cliente.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="valores" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Left: Objectives -->
+                <div class="lg:col-span-6 space-y-6 reveal">
+                    <div>
+                        <span class="text-xs font-bold text-gold-700 tracking-widest uppercase block mb-2">Estrategia & Desempeño</span>
+                        <h2 class="text-3xl font-serif font-bold text-stone-900">Objetivos Estratégicos</h2>
+                        <p class="text-stone-600 text-sm mt-1">Nuestros pilares operativos para mantener la excelencia:</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200 flex items-start space-x-4">
+                            <span class="font-serif text-3xl font-extrabold text-burgundy-800 leading-none">01</span>
+                            <div>
+                                <h4 class="text-base font-bold text-stone-900">Cadena de Frío e Higiene Impecable</h4>
+                                <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+                                    Garantizamos el manejo higiénico de los productos cárnicos con una refrigeración ininterrumpida desde los proveedores hasta tu mesa.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200 flex items-start space-x-4">
+                            <span class="font-serif text-3xl font-extrabold text-gold-700 leading-none">02</span>
+                            <div>
+                                <h4 class="text-base font-bold text-stone-900">Relaciones de Confianza a Largo Plazo</h4>
+                                <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+                                    Fomentamos relaciones duraderas mediante un trato respetuoso, transparente y transparente que asegure tu preferencia constante.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200 flex items-start space-x-4">
+                            <span class="font-serif text-3xl font-extrabold text-burgundy-800 leading-none">03</span>
+                            <div>
+                                <h4 class="text-base font-bold text-stone-900">Precios Competitivos y Accesibles</h4>
+                                <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+                                    Ofrecemos tarifas justas para el mercado guatemalteco, asegurando acceso a carne de primera sin afectar el presupuesto familiar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Values & SAN3.png -->
+                <div class="lg:col-span-6 space-y-6 reveal">
+                    <div>
+                        <span class="text-xs font-bold text-gold-700 tracking-widest uppercase block mb-2">Principios Inviolables</span>
+                        <h2 class="text-3xl font-serif font-bold text-stone-900">Valores Corporativos</h2>
+                        <p class="text-stone-600 text-sm mt-1">La filosofía de trabajo que nos distingue a diario:</p>
+                    </div>
+
+                    <!-- SAN3 Image Banner -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl border border-stone-200">
+                        <img src="SAN3.png" alt="Proceso de Calidad Cárnica" class="w-full h-44 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x300/6b0014/ffffff?text=SAN3.png';">
+                        <div class="absolute inset-0 bg-gradient-to-r from-stone-950/80 via-stone-950/40 to-transparent flex items-center p-6">
+                            <span class="font-serif italic text-white text-base max-w-xs">
+                                "Compromiso total con la frescura y la salud de tu familia."
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="p-4 rounded-xl border border-stone-200 bg-white">
+                            <div class="flex items-center space-x-2 text-burgundy-800 font-bold text-sm mb-1">
+                                <i class="fa-solid fa-circle-check text-gold-600"></i>
+                                <span>Calidad e Higiene Superior</span>
+                            </div>
+                            <p class="text-xs text-stone-600">Inspección rigurosa de cada corte cárnico para asegurar su frescura e inocuidad.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl border border-stone-200 bg-white">
+                            <div class="flex items-center space-x-2 text-burgundy-800 font-bold text-sm mb-1">
+                                <i class="fa-solid fa-handshake-simple text-gold-600"></i>
+                                <span>Honestidad y Compromiso</span>
+                            </div>
+                            <p class="text-xs text-stone-600">Garantía de pesos exactos y precios claros en cada compra, sin sorpresas.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl border border-stone-200 bg-white">
+                            <div class="flex items-center space-x-2 text-burgundy-800 font-bold text-sm mb-1">
+                                <i class="fa-solid fa-people-group text-gold-600"></i>
+                                <span>Responsabilidad Social y Respeto</span>
+                            </div>
+                            <p class="text-xs text-stone-600">Respeto a nuestros colaboradores, proveedores y clientes en Villa Nueva.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="equipo" class="py-24 bg-stone-50 relative border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-xs font-bold text-gold-700 tracking-widest uppercase block mb-2">Liderazgo Corporativo</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900">Nuestro Equipo Directivo</h2>
+                <p class="mt-4 text-stone-600 text-base">
+                    Detrás de cada decisión y entrega hay profesionales de alto nivel comprometidos con la excelencia de la empresa.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Daniel Flores - Inversionista Principal -->
+                <div class="luxury-card rounded-2xl overflow-hidden reveal">
+                    <div class="h-32 bg-gradient-to-br from-burgundy-800 to-burgundy-950 relative flex items-center justify-center border-b border-gold-500/20">
+                        <i class="fa-solid fa-user-tie text-4xl text-gold-400 opacity-80"></i>
+                        <span class="absolute bottom-4 left-4 text-[10px] font-bold px-2 py-1 rounded bg-stone-900/50 backdrop-blur-sm text-gold-300 border border-gold-500/30 uppercase tracking-widest">
+                            Dirección Ejecutiva
+                        </span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-stone-900">Daniel Alejandro Flores</h3>
+                        <p class="text-xs text-gold-700 font-bold mb-4 uppercase tracking-wider">Inversionista Principal</p>
+                        <p class="text-sm text-stone-600 leading-relaxed font-normal">
+                            Lidera la visión estratégica y el flujo de capital de la compañía, asegurando rentabilidad y solidez para respaldar un servicio inigualable.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Jessi - Administración -->
+                <div class="luxury-card rounded-2xl overflow-hidden reveal">
+                    <div class="h-32 bg-gradient-to-br from-stone-800 to-stone-950 relative flex items-center justify-center border-b border-gold-500/20">
+                        <i class="fa-solid fa-clipboard-user text-4xl text-gold-400 opacity-80"></i>
+                        <span class="absolute bottom-4 left-4 text-[10px] font-bold px-2 py-1 rounded bg-stone-900/50 backdrop-blur-sm text-gold-300 border border-gold-500/30 uppercase tracking-widest">
+                            Administración
+                        </span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-stone-900">Jessica María Monterroso</h3>
+                        <p class="text-xs text-gold-700 font-bold mb-4 uppercase tracking-wider">Atención y Servicio Comercial</p>
+                        <p class="text-sm text-stone-600 leading-relaxed font-normal">
+                            Esposa de Cristian y pieza clave en la compañía, garantiza una gestión administrativa impecable y un servicio de excelencia al cliente.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Cristian Conoz - Infraestructura -->
+                <div class="luxury-card rounded-2xl overflow-hidden reveal">
+                    <div class="h-32 bg-gradient-to-br from-burgundy-800 to-burgundy-950 relative flex items-center justify-center border-b border-gold-500/20">
+                        <i class="fa-solid fa-building-user text-4xl text-gold-400 opacity-80"></i>
+                        <span class="absolute bottom-4 left-4 text-[10px] font-bold px-2 py-1 rounded bg-stone-900/50 backdrop-blur-sm text-gold-300 border border-gold-500/30 uppercase tracking-widest">
+                            Infraestructura
+                        </span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-stone-900">Cristian Fernando Conoz</h3>
+                        <p class="text-xs text-gold-700 font-bold mb-4 uppercase tracking-wider">Logística e Infraestructura</p>
+                        <p class="text-sm text-stone-600 leading-relaxed font-normal">
+                            Apasionado de los bienes raíces y poseedor de múltiples terrenos. Supervisa las instalaciones, logística de distribución y el crecimiento físico de la empresa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 reveal">
+                <div>
+                    <span class="text-xs font-bold text-gold-700 tracking-widest uppercase block mb-2">Exhibición de Productos</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900">Nuestros Cortes de Primera</h2>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <a href="tienda.html" class="inline-flex items-center space-x-2 text-sm font-bold text-burgundy-800 hover:text-burgundy-900 transition">
+                        <span>Ver catálogo en la tienda</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 reveal">
+                <!-- Gallery 1 (SAN7.png) -->
+                <div class="group relative rounded-2xl overflow-hidden h-72 border border-stone-200 shadow-md">
+                    <img src="SAN7.png" alt="Cortes Seleccionados de Res" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.onerror=null; this.src='https://placehold.co/600x400/6b0014/ffffff?text=SAN7.png';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-[11px] text-gold-400 font-bold uppercase tracking-wider">Línea Res Premium</span>
+                        <h4 class="text-lg font-bold text-white">Cortes de Res Seleccionados</h4>
+                        <p class="text-xs text-stone-300 mt-1">Lomito, Puyaso, Entraña y cortes especiales para asados.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery 2 (SAN8.png) -->
+                <div class="group relative rounded-2xl overflow-hidden h-72 border border-stone-200 shadow-md">
+                    <img src="SAN8.png" alt="Cortes de Cerdo y Pollo Fresco" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.onerror=null; this.src='https://placehold.co/600x400/6b0014/ffffff?text=SAN8.png';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-[11px] text-gold-400 font-bold uppercase tracking-wider">Variedad Seleccionada</span>
+                        <h4 class="text-lg font-bold text-white">Cerdo & Pollo de Primera</h4>
+                        <p class="text-xs text-stone-300 mt-1">Chuletas, costilla de cerdo y pollo procesado con higiene.</p>
+                    </div>
+                </div>
+
+                <!-- Interactive Shop Card -->
+                <div class="rounded-2xl p-8 bg-gradient-to-br from-burgundy-900 to-burgundy-950 text-white shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/20 border border-gold-400/30 flex items-center justify-center text-gold-400 text-xl mb-4">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-white mb-2">¿Deseas realizar tu pedido?</h4>
+                        <p class="text-xs text-stone-300 leading-relaxed">
+                            Ingresa a nuestra tienda virtual y explora todos los cortes disponibles con entrega directa.
+                        </p>
+                    </div>
+                    <a href="tienda.html" class="mt-6 w-full py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-burgundy-950 font-bold text-center text-xs tracking-wider uppercase transition shadow-md">
+                        Explorar Catálogo Virtual
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 bg-stone-50 border-t border-stone-200 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-xs font-bold text-gold-700 tracking-widest uppercase block mb-2">Contacto Directo</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900">Ubicación & Atención al Cliente</h2>
+                <p class="mt-4 text-stone-600 text-base">
+                    Estamos para servirte con la amabilidad y la calidad que nos caracterizan.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Contact Action Cards -->
+                <div class="lg:col-span-5 space-y-4 flex flex-col justify-between reveal">
+                    <!-- Address -->
+                    <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-burgundy-50 border border-burgundy-100 flex items-center justify-center text-burgundy-800 text-xl shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-base font-bold text-stone-900">Dirección Oficial</h4>
+                            <p class="text-xs text-stone-600 mt-1">3ra. Avenida 6-45, Zona 4</p>
+                            <p class="text-xs font-bold text-burgundy-800">Villa Nueva, Guatemala</p>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp Button -->
+                    <a href="https://wa.me/50235856086?text=Hola%20Carnes%20San%20Flores,%20deseo%20hacer%20un%20pedido" target="_blank" class="p-6 rounded-2xl bg-white border border-emerald-200 shadow-sm flex items-center justify-between hover:border-emerald-500 hover:shadow-md transition group">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 text-2xl shrink-0 group-hover:scale-110 transition">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-stone-900">WhatsApp Directo</h4>
+                                <p class="text-xs font-bold text-emerald-600">+502 3585-6086</p>
+                                <p class="text-[11px] text-stone-500">Haz tu pedido o consulta de forma rápida</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-stone-400 group-hover:text-emerald-600 transition"></i>
+                    </a>
+
+                    <!-- Direct Phone Call Button -->
+                    <a href="tel:+50235856086" class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-center justify-between hover:border-burgundy-800 hover:shadow-md transition group">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-burgundy-50 border border-burgundy-100 flex items-center justify-center text-burgundy-800 text-xl shrink-0 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-stone-900">Llamada Telefónica</h4>
+                                <p class="text-xs font-bold text-burgundy-800">+502 3585-6086</p>
+                                <p class="text-[11px] text-stone-500">Atención inmediata durante horario laboral</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-stone-400 group-hover:text-burgundy-800 transition"></i>
+                    </a>
+
+                    <!-- Email Button -->
+                    <a href="mailto:carnesanflores@gmail.com" class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-center justify-between hover:border-gold-600 hover:shadow-md transition group">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-50 border border-gold-100 flex items-center justify-center text-gold-700 text-xl shrink-0 group-hover:scale-110 transition">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-stone-900">Correo Electrónico</h4>
+                                <p class="text-xs font-bold text-gold-700">carnesanflores@gmail.com</p>
+                                <p class="text-[11px] text-stone-500">Para cotizaciones de banquetes o pedidos</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-stone-400 group-hover:text-gold-700 transition"></i>
+                    </a>
+                </div>
+
+                <!-- Google Maps Frame -->
+                <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-stone-300 shadow-lg min-h-[400px] relative reveal">
+                    <iframe 
+                        title="Ubicación Carnes San Flores Villa Nueva" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15449.658602693998!2d-90.5908861!3d14.5242484!2m3!1f0!f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a1353e6b720b%3A0x8e8334eb9213fb38!2sVilla%20Nueva%2C%20Guatemala!5e0!3m2!1ses!2sgt!4v1700000000000!5m2!1ses!2sgt" 
+                        class="w-full h-full min-h-[400px] border-0" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="absolute top-4 right-4 bg-white/95 border border-stone-300 p-3.5 rounded-xl text-xs text-stone-900 shadow-md backdrop-blur-sm">
+                        <span class="flex items-center space-x-2">
+                            <i class="fa-solid fa-map-pin text-burgundy-800"></i>
+                            <span class="font-bold">Villa Nueva, Zona 4</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-400 text-xs py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-white p-0.5 border border-gold-500">
+                            <img src="SAN1.png" alt="Logo Carnes San Flores" class="w-full h-full object-contain rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/100x100/6b0014/ffffff?text=SAN1';">
+                        </div>
+                        <span class="font-serif font-bold text-lg text-white">Carnes San Flores</span>
+                    </div>
+                    <p class="text-stone-400 font-normal leading-relaxed">
+                        Calidad que se siente, confianza que nos elige. Distribución de carnes frescas en Villa Nueva, Guatemala.
+                    </p>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h5 class="text-white font-bold uppercase tracking-wider mb-4 text-xs">Navegación</h5>
+                    <ul class="space-y-2.5">
+                        <li><a href="#inicio" class="hover:text-gold-400 transition">Inicio</a></li>
+                        <li><a href="#historia" class="hover:text-gold-400 transition">Nuestra Historia</a></li>
+                        <li><a href="#nosotros" class="hover:text-gold-400 transition">¿Quiénes Somos?</a></li>
+                        <li><a href="#valores" class="hover:text-gold-400 transition">Valores y Objetivos</a></li>
+                        <li><a href="#equipo" class="hover:text-gold-400 transition">Nuestro Equipo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h5 class="text-white font-bold uppercase tracking-wider mb-4 text-xs">Contacto Directo</h5>
+                    <ul class="space-y-2.5">
+                        <li>
+                            <a href="https://wa.me/50235856086" target="_blank" class="hover:text-emerald-400 transition flex items-center space-x-2">
+                                <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                                <span>+502 3585-6086</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:carnesanflores@gmail.com" class="hover:text-gold-400 transition flex items-center space-x-2">
+                                <i class="fa-regular fa-envelope text-gold-400"></i>
+                                <span>carnesanflores@gmail.com</span>
+                            </a>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-location-dot text-gold-400 mt-0.5"></i>
+                            <span>3ra. Avenida 6-45, Zona 4, Villa Nueva, Guatemala</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Store Callout -->
+                <div>
+                    <h5 class="text-white font-bold uppercase tracking-wider mb-4 text-xs">Tienda Virtual</h5>
+                    <p class="mb-4 text-stone-400 font-normal leading-relaxed">Explora nuestro catálogo en línea para solicitar tus cortes preferidos.</p>
+                    <a href="tienda.html" class="inline-block px-4 py-2.5 rounded-lg bg-burgundy-800 hover:bg-burgundy-700 text-white font-bold text-xs transition uppercase tracking-wider">
+                        <i class="fa-solid fa-store mr-1.5 text-gold-400"></i> Ir a Tienda Online
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center text-stone-500 gap-6 md:gap-4">
+                <p class="text-center md:text-left">&copy; 2026 Carnes San Flores. Todos los derechos reservados.</p>
+                
+                <!-- QR del Estudiante (Desarrollador) -->
+                <div id="qr-trigger" class="flex items-center space-x-3 bg-stone-950 p-2.5 rounded-xl border border-stone-800 shadow-inner group cursor-pointer" title="Haga clic para ampliar el QR y ver más opciones">
+                    <div class="text-right">
+                        <p class="text-[10px] text-stone-500 uppercase tracking-widest font-bold">Desarrollo Web</p>
+                        <p class="text-xs text-gold-500 font-semibold group-hover:text-gold-400 transition">Escanear para Carnet</p>
+                    </div>
+                    <div class="w-14 h-14 bg-white p-1 rounded-lg border border-gold-500/30 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
+                        <img src="QR.png" alt="Código QR - Carnet de Estudiante" class="w-full h-full object-contain rounded" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/1c1917?text=QR';">
+                    </div>
+                </div>
+
+                <p class="text-center md:text-right">Sitio Web Oficial - Guatemala</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para QR Ampliado -->
+    <div id="qr-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div id="qr-modal-bg" class="absolute inset-0 bg-stone-950/80 backdrop-blur-sm cursor-pointer"></div>
+        <div id="qr-modal-content" class="relative bg-white rounded-2xl p-8 shadow-2xl max-w-sm w-full mx-4 transform scale-95 transition-transform duration-300 border border-gold-500/20">
+            <button id="qr-modal-close" class="absolute top-4 right-4 text-stone-400 hover:text-burgundy-800 transition focus:outline-none">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-12 h-12 mx-auto bg-burgundy-50 text-burgundy-800 rounded-full flex items-center justify-center text-xl mb-3">
+                    <i class="fa-solid fa-id-card"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-stone-900 mb-1">Carnet de Estudiante</h3>
+                <p class="text-xs text-stone-500 uppercase tracking-widest font-bold mb-6">Desarrollo Web</p>
+                
+                <div class="bg-stone-100 p-3 rounded-xl mb-6 border border-stone-200">
+                    <img src="QR.png" alt="Código QR Ampliado" class="w-full h-auto object-contain rounded-lg shadow-sm" onerror="this.onerror=null; this.src='https://placehold.co/400x400/ffffff/1c1917?text=QR';">
+                </div>
+                
+                <a href="https://agenciagt.github.io/SAN-FLORES/" target="_blank" class="block w-full py-3.5 rounded-xl bg-burgundy-800 hover:bg-burgundy-900 text-white font-bold text-sm tracking-wider uppercase transition shadow-md flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-globe text-gold-400"></i>
+                    <span>Visitar Proyecto Oficial</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Toggle Button -->
+    <button id="chatbot-toggle" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-burgundy-800 hover:bg-burgundy-900 text-white rounded-full shadow-2xl flex items-center justify-center transition-transform transform hover:scale-110 border-2 border-gold-500/50 focus:outline-none">
+        <i class="fa-solid fa-comment-dots text-2xl text-gold-400"></i>
+        <!-- Notification dot -->
+        <span class="absolute top-0 right-0 flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-gold-500"></span>
+        </span>
+    </button>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container" class="fixed bottom-24 right-6 z-50 w-[350px] sm:w-[400px] h-[550px] max-h-[80vh] bg-white rounded-2xl shadow-2xl border border-stone-200 flex flex-col hidden overflow-hidden opacity-0 scale-95 pointer-events-none transition-all duration-300">
+        
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-burgundy-900 to-burgundy-800 p-4 text-white flex justify-between items-center border-b border-gold-600/30">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-white p-0.5 border border-gold-500/50 flex-shrink-0">
+                    <img src="SAN1.png" alt="Bot Avatar" class="w-full h-full object-contain rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/100x100/6b0014/ffffff?text=SAN1';">
+                </div>
+                <div>
+                    <h3 class="font-serif font-bold text-sm tracking-wide">Asistente San Flores</h3>
+                    <p class="text-[10px] text-gold-400 flex items-center">
+                        <span class="w-2 h-2 bg-green-500 rounded-full mr-1 animate-pulse"></span> En línea
+                    </p>
+                </div>
+            </div>
+            <button id="chatbot-close" class="text-stone-300 hover:text-white transition focus:outline-none">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Messages Area -->
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-stone-50 space-y-4 flex flex-col">
+            <!-- Welcome Message (Injected via JS) -->
+        </div>
+
+        <!-- Typing Indicator (Hidden by default) -->
+        <div id="typing-indicator-container" class="hidden px-4 pb-2 bg-stone-50">
+             <div class="bg-stone-200 text-stone-600 rounded-2xl rounded-bl-none py-2 px-4 max-w-[80%] inline-flex items-center space-x-1 w-16">
+                 <div class="typing-indicator flex space-x-1">
+                     <span></span><span></span><span></span>
+                 </div>
+             </div>
+        </div>
+
+        <!-- Interactive FAQ Area -->
+        <div class="border-t border-stone-200 bg-white p-3">
+            <p class="text-[10px] font-bold text-stone-500 uppercase tracking-wider mb-2 px-1">Preguntas Frecuentes</p>
+            <div id="faq-list" class="flex flex-col gap-2 max-h-[120px] overflow-y-auto pr-1 pb-1">
+                <!-- FAQs injected via JS -->
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const faqs = [
+            // Pedidos y Envíos
+            { q: "¿Cómo puedo hacer un pedido?", a: "Puedes hacer tu pedido a través de nuestra tienda online en el botón superior, o escribiéndonos directamente a nuestro WhatsApp (+502 3585-6086) indicando los cortes que necesitas." },
+            { q: "¿Hacen envíos a domicilio?", a: "Sí, contamos con servicio a domicilio en Villa Nueva y zonas aledañas. Pregunta en WhatsApp por la cobertura exacta según tu ubicación." },
+            { q: "¿Cuánto cuesta el envío?", a: "El costo de envío varía según la distancia desde nuestro centro de distribución en Zona 4, Villa Nueva. ¡Contáctanos para darte la tarifa exacta!" },
+            { q: "¿Cuánto tarda en llegar mi pedido?", a: "Para pedidos dentro de Villa Nueva, usualmente entregamos el mismo día si confirmas antes de las 2 PM. Para pedidos especiales, recomendamos 24 horas de anticipación." },
+            { q: "¿Hay un monto mínimo para pedir?", a: "No hay un monto mínimo para comprar en mostrador. Para envíos a domicilio, sugerimos una compra mínima de Q150 para que el flete sea conveniente para ti." },
+            
+            // Productos y Calidad
+            { q: "¿Venden carne por mayor?", a: "¡Claro que sí! Surtimos a restaurantes, comedores y eventos. Contáctanos al correo carnesanflores@gmail.com para precios de mayorista." },
+            { q: "¿Qué cortes de res ofrecen?", a: "Ofrecemos una amplia variedad: Lomito, Puyaso, Entraña, Viuda, Costilla, Molida premium, entre otros. Consulta nuestra tienda virtual para el catálogo completo." },
+            { q: "¿Tienen carne de cerdo?", a: "Sí, ofrecemos excelentes cortes de cerdo frescos: chuletas, costillas, lomo, posta y chicharrones para freír." },
+            { q: "¿Venden pollo?", a: "Sí, distribuimos pollo fresco entero y en piezas (pechuga, pierna, cuadril), manejado con la más estricta higiene." },
+            { q: "¿La carne es fresca o congelada?", a: "Nos especializamos en carne FRESCA diaria. Mantenemos una cadena de frío estricta (refrigeración), no congelamos el producto que se vende el mismo día." },
+            { q: "¿Ofrecen cortes para asados o churrascos?", a: "¡Somos expertos en asados! Te recomendamos nuestro Puyaso importado, Entraña y Chorizos artesanales para tu evento." },
+            { q: "¿Venden embutidos?", a: "Sí, contamos con chorizos argentinos, longanizas y salchichas de excelente calidad para acompañar tus parrilladas." },
+            { q: "¿Pueden preparar la carne marinada?", a: "Por el momento vendemos la carne fresca al natural para que la sazones a tu gusto, pero podemos recomendarte excelentes recetas." },
+            { q: "¿Tienen cortes finos importados?", a: "Sí, manejamos líneas especiales de cortes importados (Ribeye, New York) bajo pedido previo." },
+            { q: "¿Qué garantía de higiene tienen?", a: "Nuestros fundadores, liderados por Cristian Conoz, supervisan personalmente que nuestras instalaciones cumplan con las normativas de salud más estrictas." },
+            
+            // Pagos y Facturación
+            { q: "¿Qué métodos de pago aceptan?", a: "Aceptamos efectivo, transferencias bancarias (Banrural, BI) y pago con tarjeta de crédito/débito a través de link de pago seguro." },
+            { q: "¿Puedo pagar al recibir?", a: "Sí, puedes pagar en efectivo o transferencia contra entrega si tu pedido es en Villa Nueva." },
+            { q: "¿Emiten factura?", a: "Sí, emitimos factura electrónica (FEL) en todas tus compras. Solo bríndanos tu NIT o CUI al momento de pedir." },
+            { q: "¿Tienen precios especiales para eventos?", a: "Sí, si tienes un convivio, boda o evento grande, pregunta por nuestros paquetes para banquetes con descuento." },
+            
+            // Ubicación y Horarios
+            { q: "¿Dónde están ubicados exactamente?", a: "Nuestra sala de ventas está en la 3ra. Avenida 6-45, Zona 4, Villa Nueva, Guatemala." },
+            { q: "¿Cuáles son sus horarios de atención?", a: "Te atendemos con gusto de Lunes a Sábado de 7:00 AM a 6:00 PM, y Domingos de 7:00 AM a 2:00 PM." },
+            { q: "¿Abren los días festivos?", a: "Sí, generalmente abrimos medios días en asuetos (Semana Santa, Navidad). Anunciamos los horarios especiales en nuestras redes." },
+            { q: "¿Tienen parqueo?", a: "Sí, contamos con espacio seguro frente a nuestra ubicación en Zona 4 para que cargues tu pedido cómodamente." },
+            
+            // Empresa
+            { q: "¿Quiénes son los dueños?", a: "Es un emprendimiento formal liderado por Daniel Flores (Inversionista), Jessi Monterroso (Administración) y Cristian Conoz (Infraestructura)." },
+            { q: "¿Tienen sucursales?", a: "Actualmente operamos desde nuestro centro principal en Villa Nueva, proyectando futuras expansiones gracias a su preferencia." },
+            { q: "¿Puedo trabajar con ustedes?", a: "Siempre buscamos talento. Envía tu CV a carnesanflores@gmail.com con el asunto 'Bolsa de Empleo'." },
+            
+            // Problemas / Servicio al Cliente
+            { q: "¿Qué pasa si mi pedido llega mal?", a: "La calidad es nuestra promesa. Si hay algún inconveniente, contáctanos inmediatamente a WhatsApp con fotos y lo resolveremos enseguida." },
+            { q: "¿Puedo cancelar o modificar un pedido?", a: "Sí, puedes modificarlo con al menos 3 horas de anticipación a la entrega programada escribiendo a nuestro WhatsApp." },
+            { q: "¿Cómo hago un reclamo?", a: "Puedes comunicarte directamente con nuestra área de Administración al +502 3585-6086 o al correo oficial." },
+            { q: "¿Tienen redes sociales?", a: "¡Sí! Puedes encontrarnos en Facebook e Instagram como @CarnesSanFlores para ver nuestras promociones." }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Existing Scroll Reveal & Mobile Menu Logic
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                reveals.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const revealPoint = 90;
+                    if (elementTop < windowHeight - revealPoint) {
+                        element.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll();
+
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); });
+                });
+            }
+
+            // --- Chatbot Logic ---
+            const chatbotToggle = document.getElementById('chatbot-toggle');
+            const chatbotContainer = document.getElementById('chatbot-container');
+            const chatbotClose = document.getElementById('chatbot-close');
+            const chatMessages = document.getElementById('chat-messages');
+            const faqList = document.getElementById('faq-list');
+            const typingIndicator = document.getElementById('typing-indicator-container');
+            let isChatOpen = false;
+            let hasWelcomed = false;
+
+            // Toggle Chat
+            const toggleChat = () => {
+                isChatOpen = !isChatOpen;
+                if (isChatOpen) {
+                    chatbotContainer.classList.remove('hidden');
+                    // Small delay for display block to apply before transition
+                    setTimeout(() => {
+                        chatbotContainer.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                        chatbotToggle.classList.add('scale-0'); // Hide toggle button
+                        
+                        if (!hasWelcomed) {
+                            showTypingThenMessage("¡Hola! 👋 Soy tu Asistente de Carnes San Flores. ¿En qué te puedo ayudar hoy? Selecciona una de las preguntas de abajo.");
+                            hasWelcomed = true;
+                        }
+                    }, 10);
+                } else {
+                    chatbotContainer.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                    chatbotToggle.classList.remove('scale-0'); // Show toggle button
+                    setTimeout(() => {
+                        chatbotContainer.classList.add('hidden');
+                    }, 300); // Wait for transition
+                }
+            };
+
+            chatbotToggle.addEventListener('click', toggleChat);
+            chatbotClose.addEventListener('click', toggleChat);
+
+            // Append a message to the chat
+            const appendMessage = (text, isUser = false) => {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `flex w-full chat-message-bubble ${isUser ? 'justify-end' : 'justify-start'}`;
+                
+                const innerDiv = document.createElement('div');
+                innerDiv.className = `max-w-[85%] rounded-2xl p-3 text-sm leading-relaxed ${
+                    isUser 
+                    ? 'bg-burgundy-800 text-white rounded-br-none shadow-sm' 
+                    : 'bg-white border border-stone-200 text-stone-700 rounded-bl-none shadow-sm'
+                }`;
+                
+                // Allow HTML in bot responses for basic formatting if needed
+                innerDiv.innerHTML = text; 
+                
+                msgDiv.appendChild(innerDiv);
+                chatMessages.appendChild(msgDiv);
+                
+                // Auto scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            };
+
+            // Simulated typing effect
+            const showTypingThenMessage = (messageText, delay = 1000) => {
+                typingIndicator.classList.remove('hidden');
+                chatMessages.scrollTop = chatMessages.scrollHeight; // scroll down to see indicator
+                
+                setTimeout(() => {
+                    typingIndicator.classList.add('hidden');
+                    appendMessage(messageText, false);
+                    
+                    // Add generic follow up after an answer (if it's not the welcome message)
+                    if(hasWelcomed && messageText !== "¡Hola! 👋 Soy tu Asistente de Carnes San Flores. ¿En qué te puedo ayudar hoy? Selecciona una de las preguntas de abajo.") {
+                        setTimeout(() => {
+                            appendMessage("¡Muchas gracias! Puedes seleccionar otra pregunta de la lista si lo necesitas. 👇", false);
+                        }, 800);
+                    }
+                }, delay);
+            };
+
+            // Render FAQs
+            faqs.forEach((item) => {
+                const btn = document.createElement('button');
+                btn.className = "text-left w-full p-2.5 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs rounded-xl transition duration-200 truncate font-medium border border-stone-200 focus:outline-none focus:ring-2 focus:ring-gold-500/50";
+                btn.textContent = item.q;
+                
+                btn.addEventListener('click', () => {
+                    appendMessage(item.q, true);
+                    showTypingThenMessage(item.a, 1200 + Math.random() * 500); // Randomize typing duration slightly
+                });
+                
+                faqList.appendChild(btn);
+            });
+
+            // --- QR Modal Logic ---
+            const qrTrigger = document.getElementById('qr-trigger');
+            const qrModal = document.getElementById('qr-modal');
+            const qrModalClose = document.getElementById('qr-modal-close');
+            const qrModalBg = document.getElementById('qr-modal-bg');
+            const qrModalContent = document.getElementById('qr-modal-content');
+
+            const openQrModal = () => {
+                qrModal.classList.remove('hidden');
+                // Allow display block to apply before animating opacity/transform
+                setTimeout(() => {
+                    qrModal.classList.remove('opacity-0');
+                    qrModalContent.classList.remove('scale-95');
+                    qrModalContent.classList.add('scale-100');
+                }, 10);
+            };
+
+            const closeQrModal = () => {
+                qrModal.classList.add('opacity-0');
+                qrModalContent.classList.remove('scale-100');
+                qrModalContent.classList.add('scale-95');
+                // Wait for transition to finish before hiding
+                setTimeout(() => {
+                    qrModal.classList.add('hidden');
+                }, 300);
+            };
+
+            if (qrTrigger && qrModal) {
+                qrTrigger.addEventListener('click', openQrModal);
+                qrModalClose.addEventListener('click', closeQrModal);
+                qrModalBg.addEventListener('click', closeQrModal); // Clicar fuera para cerrar
+            }
+        });
+    </script>
+</body>
+</html>
